@@ -1,0 +1,50 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'images/bg.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body >
+    <div class="min-h-screen flex justify-center items-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <h2 class="text-2xl font-bold text-gray-700 text-center mb-6">{% if form.instance.id %} Edit Book {% else %} Add New Book {% endif %}</h2>
+            <form method="POST" >
+                {% csrf_token %}
+
+                <div class="mb-4">
+                    <label for="id_title" class="block text-gray-600">Title</label>
+                    {{ form.title|add_class:"block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" }}
+                </div>
+
+                <div class="mb-4">
+                    <label for="id_author" class="block text-gray-600">Author</label>
+                    {{ form.author|add_class:"block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" }}
+                </div>
+
+                <div class="mb-4">
+                    <label for="id_published_date" class="block text-gray-600" >Published Date</label>
+                    <input id="published_date" type="date" name="published_date" value="{{ form.published_date.value }}" class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div class="mb-6 flex justify-center">
+                    <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Save</button>
+                </div>
+            </form>
+            <a href="{% url 'book_list' %}">Back</a>
+        </div>
+    </div>
+    
+</body>
+</html>
