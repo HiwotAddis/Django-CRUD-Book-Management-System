@@ -1,4 +1,4 @@
-📚 Django CRUD Project - Book Management System
+📚Django CRUD Project - Book Management System
 
 This is a Django-based CRUD application for managing a collection of books. Users can Create, Read, Update, and Delete book records with ease.
 
