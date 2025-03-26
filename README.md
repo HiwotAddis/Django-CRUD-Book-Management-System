@@ -1,24 +1,24 @@
-#📚Django CRUD Project - Book Management System
+# 📚Django CRUD Project - Book Management System
 
 This is a Django-based CRUD application for managing a collection of books. Users can Create, Read, Update, and Delete book records with ease.
 
-##🚀 Features
+## 🚀 Features
 
-📖 Add new books with title, author, and published date
+- 📖 Add new books with title, author, and published date
 
-✏️ Edit book details
+- ✏️ Edit book details
 
-❌ Delete books
+- ❌ Delete books
 
-🔍 View a list of all books
+- 🔍 View a list of all books
 
-🎨 Styled with Tailwind CSS for a modern UI
+- 🎨 Styled with Tailwind CSS for a modern UI
 
 
 ![Book List Screenshot](screenshot.png)
 
 
-##🛠️ Installation & Setup
+## 🛠️ Installation & Setup
 
 Follow these steps to set up and run the project locally.
 
